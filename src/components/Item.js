@@ -2,7 +2,7 @@ import React from "react";
 
 function Item() {
   return (
-    <div className="w-10/12 cursor-pointer bg-white hover:text-gray-700 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow mt-4">
+    <div className="transition duration-500 w-10/12 cursor-pointer bg-white hover:text-gray-700 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow mt-4">
       <div className="flex justify-between">
         <p className="p-2">Happy New Year</p>
         <div className="flex p-2 text-pink-300 hover:text-pink-500">

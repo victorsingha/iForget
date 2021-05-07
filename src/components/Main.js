@@ -16,15 +16,15 @@ function Main() {
   return (
     <div className="App flex flex-col items-center w-11/12">
       <div className="flex mt-5 items-center w-10/12 justify-between">
-        <p className="stylishFont cursor-pointer text-2xl text-pink-500">
+        <p className="font cursor-pointer text-2xl text-pink-500">
           i
-          <span className="text-2xl text-gray-400 hover:text-pink-400">
+          <span className="transition duration-500 text-2xl text-gray-400 hover:text-pink-400">
             Forget
           </span>
         </p>
         <button
           onClick={openModal}
-          class="flex bg-white hover:text-pink-400 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow"
+          class="transition duration-500 flex bg-white hover:text-pink-400 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow"
         >
           Add Date
           <svg
@@ -70,11 +70,25 @@ function Main() {
             </svg>
           </button>
         </div>
-        <form className="bg-white m-4 p-4" action="">
-          <p>for?(ex. happy new year)</p>
-          <input className="border rounded container p-2"></input>
+        <form
+          className="font-semibold text-gray-500 rounded-md bg-white m-4 p-4 space-y-5"
+          action=""
+        >
+          <p>for?</p>
+          <input
+            placeholder="ex. happy new year"
+            className="shadow container p-2"
+          ></input>
           <p>date</p>
           <p>01 Jan 2022</p>
+          <div className="container flex justify-between">
+            <div></div>
+            <input
+              className="transition duration-500 ease-in-out font-semibold cursor-pointer py-2 px-10 shadow bg-white hover:text-pink-400"
+              type="submit"
+              value="Add"
+            ></input>
+          </div>
         </form>
       </Modal>
       <Item />
