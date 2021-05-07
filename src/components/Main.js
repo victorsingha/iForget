@@ -40,13 +40,16 @@ function Main() {
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         contentLabel="Example Modal"
-        className="m-auto mt-11 w-2/3 h-2/3 bg-pink-200 rounded shadow flex flex-col"
+        className="m-auto mt-11 w-10/12 h-2/3 bg-gray-100 rounded shadow flex flex-col"
       >
         <div className="h-min flex items-start justify-end">
-          <button className="p-1" onClick={closeModal}>
+          <button
+            className="p-3 text-gray-500 hover:text-gray-900"
+            onClick={closeModal}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
+              class="h-6 w-6"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
