@@ -48,7 +48,7 @@ function Main() {
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        contentLabel="Example Modal"
+        contentLabel="Add Date"
         className="m-auto mt-11 w-10/12 h-2/3 bg-gray-100 rounded shadow flex flex-col"
       >
         <div className="h-min flex items-start justify-end">
@@ -70,9 +70,9 @@ function Main() {
             </svg>
           </button>
         </div>
-        <form action="">
+        <form className="bg-white m-4 p-4" action="">
           <p>for?(ex. happy new year)</p>
-          <input></input>
+          <input className="border rounded container p-2"></input>
           <p>date</p>
           <p>01 Jan 2022</p>
         </form>
