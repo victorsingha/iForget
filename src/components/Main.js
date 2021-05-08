@@ -1,9 +1,13 @@
 import "../App.css";
-import React from "react";
+import React, { useState } from "react";
 import Item from "./Item";
 import Modal from "react-modal";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 function Main() {
+  const [startDate, setStartDate] = useState(new Date());
   const [modalIsOpen, setIsOpen] = React.useState(false);
   function openModal() {
     setIsOpen(true);
@@ -13,6 +17,7 @@ function Main() {
   function closeModal() {
     setIsOpen(false);
   }
+
   return (
     <div className="App flex flex-col items-center container">
       <div className="flex mt-5 items-center w-11/12 justify-between">
@@ -77,10 +82,14 @@ function Main() {
           <p>for?</p>
           <input
             placeholder="ex. happy new year"
-            className="shadow container p-2"
+            className="font-semibold text-gray-500 shadow container p-2"
           ></input>
           <p>date</p>
-          <p>01 Jan 2022</p>
+          <DatePicker
+            className="transition duration-500 ease-in-out cursor-pointer font-semibold text-gray-500 shadow py-2 pl-3 hover:text-pink-400"
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+          />
           <div className="container flex justify-between">
             <div></div>
             <input
