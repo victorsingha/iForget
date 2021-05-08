@@ -7,9 +7,7 @@ function Item() {
 
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
-      // Render a completed state
       //setDate() to new CountDown
-      //Render new CountDown
       const year = date.slice(0, 4);
       const nextYear = parseInt(year) + 1;
       const nextDate = nextYear + date.slice(4, 10);
@@ -19,24 +17,7 @@ function Item() {
       // setDate("2021-06-05");
       return (
         <>
-          <p className="flex container justify-between px-3 text-3xl">
-            <p onChange={setPercent(100 - (days / 366) * 100)}>
-              {days}
-              <span>d </span>
-            </p>
-            <p>
-              {hours}
-              <span>h </span>
-            </p>
-            <p>
-              {minutes}
-              <span>m </span>
-            </p>
-            <p>
-              {seconds}
-              <span>s</span>
-            </p>
-          </p>
+          <p>Completed</p>
         </>
       );
     } else {
