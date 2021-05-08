@@ -1,31 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import Countdown from "react-countdown";
 
 function Item() {
+  const [percent, setPercent] = useState(10);
+
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
     } else {
       // Render a countdown
       return (
-        <p className="flex container justify-between px-3 text-3xl">
-          <p>
-            {days}
-            <span>d </span>
+        <>
+          <p className="flex container justify-between px-3 text-3xl">
+            <p onChange={setPercent(100 - (days / 365) * 100)}>
+              {days}
+              <span>d </span>
+            </p>
+            <p>
+              {hours}
+              <span>h </span>
+            </p>
+            <p>
+              {minutes}
+              <span>m </span>
+            </p>
+            <p>
+              {seconds}
+              <span>s</span>
+            </p>
           </p>
-          <p>
-            {hours}
-            <span>h </span>
-          </p>
-          <p>
-            {minutes}
-            <span>m </span>
-          </p>
-          <p>
-            {seconds}
-            <span>s</span>
-          </p>
-        </p>
+        </>
       );
     }
   };
@@ -57,7 +61,7 @@ function Item() {
       <div className="relative pt-1 mt-2">
         <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
           <div
-            style={{ width: "30%" }}
+            style={{ width: percent + "%" }}
             className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"
           ></div>
         </div>
