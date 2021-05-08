@@ -1,23 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Countdown from "react-countdown";
 
 function Item() {
-  const [percent, setPercent] = useState(10);
-  const [date, setDate] = useState("2021-05-29"); //`2021-06-05T01:02:03`
+  var d = new Date();
+  var year = d.getFullYear();
+  const [percent, setPercent] = useState(100);
+  const [date, setDate] = useState(year + 1 + "-05-08T20:46:00"); //`2021-06-05T01:02:03`
+  useEffect(() => {});
 
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       //setDate() to new CountDown
-      const year = date.slice(0, 4);
-      const nextYear = parseInt(year) + 1;
-      const nextDate = nextYear + date.slice(4, 10);
-      console.log(date.slice(4, 10));
-      console.log(nextDate);
-      setDate(nextDate);
-      // setDate("2021-06-05");
       return (
         <>
-          <p>Completed</p>
+          <p className="text-3xl hover:text-green-400">Completed</p>
+          <button className="flex font text-2xl hover:text-pink-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              />
+            </svg>
+            restart
+          </button>
         </>
       );
     } else {
