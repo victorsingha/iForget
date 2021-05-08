@@ -8,9 +8,24 @@ function Item() {
     } else {
       // Render a countdown
       return (
-        <span>
-          {days}:{hours}:{minutes}:{seconds}
-        </span>
+        <p className="flex container justify-between px-3 text-3xl">
+          <p>
+            {days}
+            <span>d </span>
+          </p>
+          <p>
+            {hours}
+            <span>h </span>
+          </p>
+          <p>
+            {minutes}
+            <span>m </span>
+          </p>
+          <p>
+            {seconds}
+            <span>s</span>
+          </p>
+        </p>
       );
     }
   };
@@ -37,10 +52,6 @@ function Item() {
         </div>
       </div>
       <div className="mt-6 flex justify-around">
-        <p>322d</p>
-        <p>19h</p>
-        <p>31m</p>
-        <p>54s</p>
         <Countdown date={`2022-01-01T01:02:03`} renderer={renderer} />
       </div>
       <div className="relative pt-1 mt-2">
