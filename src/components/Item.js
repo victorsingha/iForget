@@ -8,6 +8,31 @@ function Item() {
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
+      //setDate() to new CountDown
+      //Render new CountDown
+      setDate(`2022-06-05`);
+      return (
+        <>
+          <p className="flex container justify-between px-3 text-3xl">
+            <p onChange={setPercent(100 - (days / 366) * 100)}>
+              {days}
+              <span>d </span>
+            </p>
+            <p>
+              {hours}
+              <span>h </span>
+            </p>
+            <p>
+              {minutes}
+              <span>m </span>
+            </p>
+            <p>
+              {seconds}
+              <span>s</span>
+            </p>
+          </p>
+        </>
+      );
     } else {
       // Render a countdown
       return (
