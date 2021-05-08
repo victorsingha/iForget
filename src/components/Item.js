@@ -3,14 +3,20 @@ import Countdown from "react-countdown";
 
 function Item() {
   const [percent, setPercent] = useState(10);
-  const [date, setDate] = useState(`2021-06-05`); //`2021-06-05T01:02:03`
+  const [date, setDate] = useState("2021-05-29"); //`2021-06-05T01:02:03`
 
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
       //setDate() to new CountDown
       //Render new CountDown
-      setDate(`2022-06-05`);
+      const year = date.slice(0, 4);
+      const nextYear = parseInt(year) + 1;
+      const nextDate = nextYear + date.slice(4, 10);
+      console.log(date.slice(4, 10));
+      console.log(nextDate);
+      setDate(nextDate);
+      // setDate("2021-06-05");
       return (
         <>
           <p className="flex container justify-between px-3 text-3xl">
