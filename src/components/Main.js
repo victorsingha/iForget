@@ -14,8 +14,8 @@ function Main() {
     setIsOpen(false);
   }
   return (
-    <div className="App flex flex-col items-center w-11/12">
-      <div className="flex mt-5 items-center w-10/12 justify-between">
+    <div className="App flex flex-col items-center container">
+      <div className="flex mt-5 items-center w-11/12 justify-between">
         <p className="font cursor-pointer text-2xl text-pink-500">
           i
           <span className="transition duration-500 text-2xl text-gray-400 hover:text-pink-400">
