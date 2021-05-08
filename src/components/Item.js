@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Countdown from "react-countdown";
 
-function Item() {
+function Item(props) {
   var d = new Date();
   var year = d.getFullYear();
   const [percent, setPercent] = useState(100);
-  const [date, setDate] = useState(year + 1 + "-05-08T20:46:00"); //`2021-06-05T01:02:03`
+  const [date, setDate] = useState(props.targetDate); //`2021-06-05T01:02:03`
   useEffect(() => {});
 
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -13,24 +13,9 @@ function Item() {
       //setDate() to new CountDown
       return (
         <>
-          <p className="text-3xl hover:text-green-400">Completed</p>
-          <button className="flex font text-2xl hover:text-pink-400">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-              />
-            </svg>
-            restart
-          </button>
+          <p className="transition duration-400 ease-in-out font text-3xl">
+            Completed
+          </p>
         </>
       );
     } else {
@@ -60,11 +45,11 @@ function Item() {
     }
   };
   return (
-    <div className="transition duration-500 w-11/12 cursor-pointer bg-white hover:text-gray-700 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow mt-4">
+    <div className="shadow transition duration-500 w-11/12 cursor-pointer bg-white hover:text-gray-700 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow-lg mt-4">
       <div className="flex justify-between">
-        <p className="p-2">Happy New Year</p>
+        <p className="p-2">{props.reason}</p>
         <div className="flex p-2 text-pink-300 hover:text-pink-500">
-          <p>01 Jan 2022</p>
+          <p>{props.targetDate}</p>
           <button className="ml-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"

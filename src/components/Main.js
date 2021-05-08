@@ -9,6 +9,24 @@ import "react-datepicker/dist/react-datepicker.css";
 function Main() {
   const [startDate, setStartDate] = useState(new Date());
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const data = [
+    {
+      reason: "Happy New Year 2022",
+      targetDate: "2022-01-01",
+    },
+    {
+      reason: "Birthday 2022",
+      targetDate: "2021-06-30",
+    },
+    {
+      reason: "DeathDay",
+      targetDate: "2021-12-30",
+    },
+    {
+      reason: "DeathDay",
+      targetDate: "2021-12-30",
+    },
+  ];
   function openModal() {
     setIsOpen(true);
   }
@@ -100,7 +118,9 @@ function Main() {
           </div>
         </form>
       </Modal>
-      <Item />
+      {data.map((date) => (
+        <Item reason={date.reason} targetDate={date.targetDate} />
+      ))}
     </div>
   );
 }
