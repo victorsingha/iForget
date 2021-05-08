@@ -30,6 +30,11 @@
 .font {
   font-family: "Dancing Script", cursive;
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 @keyframes App-logo-spin {
   from {

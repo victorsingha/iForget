@@ -20,11 +20,11 @@ function Main() {
     },
     {
       reason: "DeathDay",
-      targetDate: "2021-12-30",
+      targetDate: "2198-09-30",
     },
     {
       reason: "DeathDay",
-      targetDate: "2021-12-30",
+      targetDate: "2099-12-30",
     },
   ];
   function openModal() {
