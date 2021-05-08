@@ -1,4 +1,5 @@
 import React from "react";
+import Countdown from "react-countdown";
 
 function Item() {
   return (
@@ -28,6 +29,7 @@ function Item() {
         <p>19h</p>
         <p>31m</p>
         <p>50s</p>
+        <Countdown date={Date.now() + 1000000000} />
       </div>
       <div className="relative pt-1 mt-2">
         <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
