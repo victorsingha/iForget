@@ -38,7 +38,7 @@ function Main() {
 
   return (
     <div className="App flex flex-col items-center container">
-      <div className="flex mt-5 items-center w-11/12 justify-between">
+      <div className="md:w-2/3 flex mt-5 items-center w-11/12 justify-between">
         <p className="font cursor-pointer text-2xl text-pink-500">
           i
           <span className="transition duration-500 text-2xl text-gray-400 hover:text-pink-400">
@@ -72,7 +72,7 @@ function Main() {
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         contentLabel="Add Date"
-        className="m-auto mt-11 w-10/12 h-2/3 bg-gray-100 rounded shadow flex flex-col"
+        className="md:w-5/12 m-auto mt-11 w-10/12 h-2/3 bg-gray-100 rounded shadow flex flex-col"
       >
         <div className="h-min flex items-start justify-end">
           <button
@@ -108,6 +108,7 @@ function Main() {
             selected={startDate}
             onChange={(date) => setStartDate(date)}
           />
+          {console.log(startDate)}
           <div className="container flex justify-between">
             <div></div>
             <input

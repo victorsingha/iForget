@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import Countdown from "react-countdown";
 
 function Item(props) {
-  var d = new Date();
-  var year = d.getFullYear();
   const [percent, setPercent] = useState(100);
-  const [date, setDate] = useState(props.targetDate); //`2021-06-05T01:02:03`
+  const [date, setDate] = useState(props.targetDate); //`2022-01-01T00:00:00`
   useEffect(() => {});
 
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -45,7 +43,7 @@ function Item(props) {
     }
   };
   return (
-    <div className="shadow transition duration-500 w-11/12 cursor-pointer bg-white hover:text-gray-700 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow-lg mt-4">
+    <div className="md:w-2/3 shadow transition duration-500 w-11/12 cursor-pointer bg-white hover:text-gray-700 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow-lg mt-4">
       <div className="flex justify-between">
         <p className="p-2">{props.reason}</p>
         <div className="flex p-2 text-pink-300 hover:text-pink-500">
