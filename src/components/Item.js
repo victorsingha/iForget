@@ -2,6 +2,18 @@ import React from "react";
 import Countdown from "react-countdown";
 
 function Item() {
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      // Render a completed state
+    } else {
+      // Render a countdown
+      return (
+        <span>
+          {days}:{hours}:{minutes}:{seconds}
+        </span>
+      );
+    }
+  };
   return (
     <div className="transition duration-500 w-11/12 cursor-pointer bg-white hover:text-gray-700 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow mt-4">
       <div className="flex justify-between">
@@ -25,11 +37,11 @@ function Item() {
         </div>
       </div>
       <div className="mt-6 flex justify-around">
-        <p>250d</p>
+        <p>322d</p>
         <p>19h</p>
         <p>31m</p>
-        <p>50s</p>
-        <Countdown date={Date.now() + 1000000000} />
+        <p>54s</p>
+        <Countdown date={`2022-01-01T01:02:03`} renderer={renderer} />
       </div>
       <div className="relative pt-1 mt-2">
         <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
