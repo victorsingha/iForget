@@ -11,18 +11,22 @@ function Main() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const data = [
     {
+      id: 1,
       reason: "Happy New Year 2022",
       targetDate: "2022-01-01",
     },
     {
+      id: 2,
       reason: "Birthday 2022",
       targetDate: "2021-06-30",
     },
     {
+      id: 3,
       reason: "DeathDay",
       targetDate: "2198-09-30",
     },
     {
+      id: 4,
       reason: "DeathDay",
       targetDate: "2099-12-30",
     },
@@ -47,7 +51,7 @@ function Main() {
         </p>
         <button
           onClick={openModal}
-          class="transition duration-500 flex bg-white hover:text-pink-400 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow"
+          className="transition duration-500 flex bg-white hover:text-pink-400 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow"
         >
           Add Date
           <svg
@@ -58,9 +62,9 @@ function Main() {
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M12 6v6m0 0v6m0-6h6m-6 0H6"
             />
           </svg>
@@ -81,14 +85,14 @@ function Main() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
+              className="h-6 w-6"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </button>
@@ -120,7 +124,7 @@ function Main() {
         </form>
       </Modal>
       {data.map((date) => (
-        <Item reason={date.reason} targetDate={date.targetDate} />
+        <Item key={date.id} reason={date.reason} targetDate={date.targetDate} />
       ))}
     </div>
   );
