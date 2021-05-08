@@ -3,6 +3,7 @@ import Countdown from "react-countdown";
 
 function Item() {
   const [percent, setPercent] = useState(10);
+  const [date, setDate] = useState(`2021-06-05`); //`2021-06-05T01:02:03`
 
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
@@ -56,7 +57,7 @@ function Item() {
         </div>
       </div>
       <div className="mt-6 flex justify-around">
-        <Countdown date={`2022-01-01T01:02:03`} renderer={renderer} />
+        <Countdown date={date} renderer={renderer} />
       </div>
       <div className="relative pt-1 mt-2">
         <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
