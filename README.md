@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+## `iForget` with Create React App
+
+with ❤ by victor
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+![image](https://raw.githubusercontent.com/victorsingha/iForget/main/screenshot.jpg)
 
 ## Available Scripts
 
