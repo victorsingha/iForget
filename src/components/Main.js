@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Item from "./Item";
 import Modal from "react-modal";
 import DatePicker from "react-datepicker";
+import firebasedb from "../firebase";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -64,13 +65,17 @@ function Main() {
     var d = formatDate(date);
     setDate(d);
   }
+  function addToFireBase(data) {
+    firebasedb.child("dateLists").push(data);
+  }
   function handleFormSubmit(e) {
-    e.preventDefault();
-    // console.log(reason);
-    // console.log(date);
-    oneData.reason = reason;
-    oneData.date = date;
-    console.log(oneData);
+    // e.preventDefault();
+    if (reason != null && date != null) {
+      oneData.reason = reason;
+      oneData.date = date;
+      console.log(oneData);
+      addToFireBase(oneData);
+    }
   }
 
   return (
