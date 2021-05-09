@@ -1,5 +1,5 @@
 import "../App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Item from "./Item";
 import Modal from "react-modal";
 import DatePicker from "react-datepicker";
@@ -17,6 +17,25 @@ function Main() {
     reason: "",
     date: "",
   };
+  function snapshotToArray(snapshot) {
+    var returnArr = [];
+
+    snapshot.forEach(function (childSnapshot) {
+      var item = childSnapshot.val();
+      item.key = childSnapshot.key;
+
+      returnArr.push(item);
+    });
+
+    return returnArr;
+  }
+  var dataList = [];
+  useEffect(() => {
+    firebasedb.child("dateLists").on("value", (snapshot) => {
+      dataList = snapshotToArray(snapshot);
+      console.log(dataList);
+    });
+  }, []);
   const data = [
     // {
     //   id: 1,
