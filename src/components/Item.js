@@ -70,7 +70,7 @@ function Item(props) {
         </div>
       </div>
       <div className="mt-6 flex justify-around">
-        <Countdown date={date} renderer={renderer} />
+        <Countdown date={date + "T00:00:00"} renderer={renderer} />
       </div>
       <div className="relative pt-1 mt-2">
         <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
