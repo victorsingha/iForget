@@ -6,7 +6,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![image](https://raw.githubusercontent.com/victorsingha/iForget/main/screenshot.jpg)
+![image](https://raw.githubusercontent.com/victorsingha/iForget/main/screensh.jpg)
 
 ## Available Scripts
 
