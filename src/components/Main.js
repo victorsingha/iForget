@@ -22,6 +22,7 @@ function Main() {
     var returnArr = [];
     snapshot.forEach(function (childSnapshot) {
       var item = childSnapshot.val();
+      item.key = childSnapshot.key;
       returnArr.push(item);
     });
     return returnArr;
@@ -33,7 +34,7 @@ function Main() {
       dataList = snapshotToArray(snapshot);
       console.log(dataList);
       setList(dataList);
-      console.log(list);
+      // console.log(list);
     });
   }, []);
   function openModal() {
@@ -168,7 +169,12 @@ function Main() {
         <Item key={data.key} reason={data.reason} targetDate={data.date} />
       ))} */}
       {list.map((data) => (
-        <Item key={data.key} reason={data.reason} targetDate={data.date} />
+        <Item
+          key={data.key}
+          id={data.key}
+          reason={data.reason}
+          targetDate={data.date}
+        />
       ))}
     </div>
   );

@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import Countdown from "react-countdown";
+import firebasedb from "../firebase";
 
 function Item(props) {
   const [percent, setPercent] = useState(100);
   const [date, setDate] = useState(props.targetDate); //`2022-01-01T00:00:00`
 
+  function onDelete(id) {
+    if (window.confirm("Are You Sure?")) {
+      firebasedb.child(`dateLists/${id}`).remove();
+      console.log(id);
+    }
+  }
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       //setDate() to new CountDown
@@ -47,7 +54,7 @@ function Item(props) {
         <p className="p-2">{props.reason}</p>
         <div className="flex p-2 text-pink-300 hover:text-pink-500">
           <p>{props.targetDate}</p>
-          <button className="ml-4">
+          <button className="ml-4" onClick={() => onDelete(props.id)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
