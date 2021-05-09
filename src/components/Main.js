@@ -1,5 +1,5 @@
 import "../App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Item from "./Item";
 import Modal from "react-modal";
 import DatePicker from "react-datepicker";
@@ -9,27 +9,32 @@ import "react-datepicker/dist/react-datepicker.css";
 function Main() {
   const [startDate, setStartDate] = useState(new Date());
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const initialFieldValues = {
+    reason: "",
+    date: "",
+  };
+  var [formValue, setFormValue] = useState(initialFieldValues);
   const data = [
-    {
-      id: 1,
-      reason: "Happy New Year 2022",
-      targetDate: "2022-01-01",
-    },
-    {
-      id: 2,
-      reason: "Birthday 2022",
-      targetDate: "2021-06-30",
-    },
-    {
-      id: 3,
-      reason: "DeathDay",
-      targetDate: "2198-09-30",
-    },
-    {
-      id: 4,
-      reason: "DeathDay",
-      targetDate: "2099-12-30",
-    },
+    // {
+    //   id: 1,
+    //   reason: "Happy New Year 2022",
+    //   targetDate: "2022-01-01",
+    // },
+    // {
+    //   id: 2,
+    //   reason: "Birthday 2022",
+    //   targetDate: "2021-06-30",
+    // },
+    // {
+    //   id: 3,
+    //   reason: "DeathDay",
+    //   targetDate: "2198-09-30",
+    // },
+    // {
+    //   id: 4,
+    //   reason: "DeathDay",
+    //   targetDate: "2099-12-30",
+    // },
   ];
   function openModal() {
     setIsOpen(true);
@@ -38,6 +43,26 @@ function Main() {
 
   function closeModal() {
     setIsOpen(false);
+  }
+  function formatDate(date) {
+    var d = new Date(date),
+      month = "" + (d.getMonth() + 1),
+      day = "" + d.getDate(),
+      year = d.getFullYear();
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+
+    return [year, month, day].join("-");
+  }
+  function handleInputChange(e) {
+    var { name, value } = e.target;
+    setFormValue({ reason: value });
+    console.log(formValue.reason);
+  }
+  function handleDateChange(date) {
+    var d = formatDate(date);
+    setFormValue({ date: d });
+    console.log(formValue.date);
   }
 
   return (
@@ -98,21 +123,29 @@ function Main() {
           </button>
         </div>
         <form
+          autoComplete="off"
           className="font-semibold text-gray-500 rounded-md bg-white m-4 p-4 space-y-5"
           action=""
         >
-          <p>for?</p>
+          <p>reason?</p>
           <input
             placeholder="ex. happy new year"
             className="font-semibold text-gray-500 shadow container p-2"
+            value={formValue.reason}
+            name="reason"
+            onChange={handleInputChange}
           ></input>
           <p>date</p>
           <DatePicker
+            name="date"
             className="transition duration-500 ease-in-out cursor-pointer font-semibold text-gray-500 shadow py-2 pl-3 hover:text-pink-400"
             selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            // value={startDate}
+            onChange={(date) => {
+              handleDateChange(date);
+              setStartDate(date);
+            }}
           />
-          {console.log(startDate)}
           <div className="container flex justify-between">
             <div></div>
             <input

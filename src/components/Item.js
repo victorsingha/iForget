@@ -4,7 +4,7 @@ import Countdown from "react-countdown";
 function Item(props) {
   const [percent, setPercent] = useState(100);
   const [date, setDate] = useState(props.targetDate); //`2022-01-01T00:00:00`
-  useEffect(() => {});
+  useEffect(() => {},[]);
 
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
