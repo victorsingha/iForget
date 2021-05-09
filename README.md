@@ -1,7 +1,6 @@
 ## `iForget` with Create React App
 
-### Powered by <img src="https://1.bp.blogspot.com/-YIfQT6q8ZM4/Vzyq5z1B8HI/AAAAAAAAAAc/UmWSSMLKtKgtH7CACElUp12zXkrPK5UoACLcB/s1600/image00.png" width="300" height="150"> `realtime database`
-`made with ❤ by victor`
+### Powered by `<img src="https://1.bp.blogspot.com/-YIfQT6q8ZM4/Vzyq5z1B8HI/AAAAAAAAAAc/UmWSSMLKtKgtH7CACElUp12zXkrPK5UoACLcB/s1600/image00.png" width="300" height="150">` `realtime database`
 
 `gh-deployed` [https://victorsingha.github.io/iForget/](https://victorsingha.github.io/iForget/)
 
