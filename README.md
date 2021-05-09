@@ -1,6 +1,6 @@
 ## `iForget` with Create React App
 
-# Powered by `firebase` `realtime database`
+# Powered by <font color="red"> firebase </font> `realtime database`
 
 `made with ❤ by victor`
 
