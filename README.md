@@ -1,6 +1,8 @@
 ## `iForget` with Create React App
 
-with ❤ by victor
+`made with ❤ by victor`
+
+`gh-deployed` [https://victorsingha.github.io/iForget/](https://victorsingha.github.io/iForget/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
