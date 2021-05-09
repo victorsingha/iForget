@@ -90,7 +90,7 @@ function Main() {
         </p>
         <button
           onClick={openModal}
-          className="transition duration-500 flex bg-white hover:text-pink-400 text-gray-400 font-semibold py-2 px-4 rounded hover:shadow"
+          className="border border-pink-100 transition duration-500 flex bg-white hover:text-pink-400 text-gray-400 font-semibold py-2 px-4 rounded hover:border-pink-300"
         >
           Add Date
           <svg
