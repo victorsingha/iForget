@@ -12,6 +12,10 @@ function Main() {
 
   const [reason, setReason] = useState();
   const [date, setDate] = useState();
+  const oneData = {
+    reason: "",
+    date: "",
+  };
   const data = [
     // {
     //   id: 1,
@@ -55,22 +59,23 @@ function Main() {
   function handleInputChange(e) {
     var { name, value } = e.target;
     setReason(value);
-    // console.log(formValue.reason);
   }
   function handleDateChange(date) {
     var d = formatDate(date);
     setDate(d);
-    // console.log(formValue.date);
   }
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log(reason);
-    console.log(date);
+    // console.log(reason);
+    // console.log(date);
+    oneData.reason = reason;
+    oneData.date = date;
+    console.log(oneData);
   }
 
   return (
     <div className="App flex flex-col items-center container">
-      <div className="md:w-2/3 flex mt-5 items-center w-11/12 justify-between">
+      <div className="md:w-2/3 flex mt-5 items-center w-11/12 justify-between mb-1">
         <p className="font cursor-pointer text-2xl text-pink-500">
           i
           <span className="transition duration-500 text-2xl text-gray-400 hover:text-pink-400">
@@ -104,7 +109,7 @@ function Main() {
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         contentLabel="Add Date"
-        className="md:w-5/12 m-auto mt-11 w-10/12 h-2/3 bg-gray-100 rounded shadow flex flex-col"
+        className="md:w-5/12 m-auto mt-11 w-11/12 h-2/3 bg-gray-100 rounded shadow flex flex-col"
       >
         <div className="h-min flex items-start justify-end">
           <button
