@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import firebasedb from "../firebase";
 
 import "react-datepicker/dist/react-datepicker.css";
+import Shadows from "./Shadows";
 
 function Main() {
   const [startDate, setStartDate] = useState(new Date());
@@ -32,11 +33,13 @@ function Main() {
   useEffect(() => {
     firebasedb.child("dateLists").on("value", (snapshot) => {
       dataList = snapshotToArray(snapshot);
-      console.log(dataList);
+      // console.log(dataList);
       setList(dataList);
-      // console.log(list);
     });
   }, []);
+  function renderShadow() {
+    if (list.length == 0) return <Shadows />;
+  }
   function openModal() {
     setIsOpen(true);
   }
@@ -165,9 +168,7 @@ function Main() {
           </div>
         </form>
       </Modal>
-      {/* {dataList.map((data) => (
-        <Item key={data.key} reason={data.reason} targetDate={data.date} />
-      ))} */}
+      {renderShadow()}
       {list.map((data) => (
         <Item
           key={data.key}
