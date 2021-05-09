@@ -1,6 +1,6 @@
 ## `iForget` with Create React App
 
-# Powered by ![firebase](https://1.bp.blogspot.com/-YIfQT6q8ZM4/Vzyq5z1B8HI/AAAAAAAAAAc/UmWSSMLKtKgtH7CACElUp12zXkrPK5UoACLcB/s1600/image00.png) `realtime database`
+# Powered by ![firebase](https://1.bp.blogspot.com/-YIfQT6q8ZM4/Vzyq5z1B8HI/AAAAAAAAAAc/UmWSSMLKtKgtH7CACElUp12zXkrPK5UoACLcB/s1600/image00.png =500*250) `realtime database`
 
 `made with ❤ by victor`
 
