@@ -1,5 +1,7 @@
 ## `iForget` with Create React App
 
+# Powered by `firebase` `realtime database`
+
 `made with ❤ by victor`
 
 `gh-deployed` [https://victorsingha.github.io/iForget/](https://victorsingha.github.io/iForget/)
