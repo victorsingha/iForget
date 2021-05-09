@@ -19,7 +19,7 @@ function Item(props) {
       // Render a countdown
       return (
         <>
-          <p className="flex container justify-between px-3 text-3xl">
+          <p className="flex container justify-between px-3 text-2xl md:text-4xl">
             <p onChange={setPercent(100 - (days / 365) * 100)}>
               {days}
               <span>d </span>

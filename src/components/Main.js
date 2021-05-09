@@ -17,47 +17,25 @@ function Main() {
     reason: "",
     date: "",
   };
+
   function snapshotToArray(snapshot) {
     var returnArr = [];
-
     snapshot.forEach(function (childSnapshot) {
       var item = childSnapshot.val();
-      item.key = childSnapshot.key;
-
       returnArr.push(item);
     });
-
     return returnArr;
   }
-  var dataList = [];
+  var dataList;
+  const [list, setList] = useState([]);
   useEffect(() => {
     firebasedb.child("dateLists").on("value", (snapshot) => {
       dataList = snapshotToArray(snapshot);
       console.log(dataList);
+      setList(dataList);
+      console.log(list);
     });
   }, []);
-  const data = [
-    // {
-    //   id: 1,
-    //   reason: "Happy New Year 2022",
-    //   targetDate: "2022-01-01",
-    // },
-    // {
-    //   id: 2,
-    //   reason: "Birthday 2022",
-    //   targetDate: "2021-06-30",
-    // },
-    // {
-    //   id: 3,
-    //   reason: "DeathDay",
-    //   targetDate: "2198-09-30",
-    // },
-    // {
-    //   id: 4,
-    //   reason: "DeathDay",
-    //   targetDate: "2099-12-30",
-    // },
-  ];
   function openModal() {
     setIsOpen(true);
   }
@@ -157,7 +135,6 @@ function Main() {
         <form
           autoComplete="off"
           className="font-semibold text-gray-500 rounded-md bg-white m-4 p-4 space-y-5"
-          action=""
           onSubmit={handleFormSubmit}
         >
           <p>reason?</p>
@@ -166,14 +143,12 @@ function Main() {
             className="font-semibold text-gray-500 shadow container p-2"
             name="reason"
             onChange={handleInputChange}
-            // value={formValue.reason}
           ></input>
           <p>date</p>
           <DatePicker
             name="date"
             className="transition duration-500 ease-in-out cursor-pointer font-semibold text-gray-500 shadow py-2 pl-3 hover:text-pink-400"
             selected={startDate}
-            // value={startDate}
             onChange={(date) => {
               handleDateChange(date);
               setStartDate(date);
@@ -189,8 +164,11 @@ function Main() {
           </div>
         </form>
       </Modal>
-      {data.map((date) => (
-        <Item key={date.id} reason={date.reason} targetDate={date.targetDate} />
+      {/* {dataList.map((data) => (
+        <Item key={data.key} reason={data.reason} targetDate={data.date} />
+      ))} */}
+      {list.map((data) => (
+        <Item key={data.key} reason={data.reason} targetDate={data.date} />
       ))}
     </div>
   );
