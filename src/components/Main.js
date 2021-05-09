@@ -1,5 +1,5 @@
 import "../App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Item from "./Item";
 import Modal from "react-modal";
 import DatePicker from "react-datepicker";
@@ -56,13 +56,15 @@ function Main() {
   }
   function handleInputChange(e) {
     var { name, value } = e.target;
-    setFormValue({ reason: value });
-    console.log(formValue.reason);
+    console.log(value);
+    setFormValue({ ...formValue, [name]: value });
+    // console.log(formValue.reason);
   }
   function handleDateChange(date) {
     var d = formatDate(date);
-    setFormValue({ date: d });
-    console.log(formValue.date);
+    console.log(d);
+    // setFormValue({ date: d });
+    // console.log(formValue.date);
   }
 
   return (
@@ -131,9 +133,9 @@ function Main() {
           <input
             placeholder="ex. happy new year"
             className="font-semibold text-gray-500 shadow container p-2"
-            value={formValue.reason}
             name="reason"
             onChange={handleInputChange}
+            // value={formValue.reason}
           ></input>
           <p>date</p>
           <DatePicker
