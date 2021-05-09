@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/iForget/static/css/main.3f928c44.chunk.css",
+    "main.js": "/iForget/static/js/main.6cc3991a.chunk.js",
+    "main.js.map": "/iForget/static/js/main.6cc3991a.chunk.js.map",
+    "runtime-main.js": "/iForget/static/js/runtime-main.95feec00.js",
+    "runtime-main.js.map": "/iForget/static/js/runtime-main.95feec00.js.map",
+    "static/css/2.0cfad52a.chunk.css": "/iForget/static/css/2.0cfad52a.chunk.css",
+    "static/js/2.bba58470.chunk.js": "/iForget/static/js/2.bba58470.chunk.js",
+    "static/js/2.bba58470.chunk.js.map": "/iForget/static/js/2.bba58470.chunk.js.map",
+    "static/js/3.a0fc4690.chunk.js": "/iForget/static/js/3.a0fc4690.chunk.js",
+    "static/js/3.a0fc4690.chunk.js.map": "/iForget/static/js/3.a0fc4690.chunk.js.map",
+    "index.html": "/iForget/index.html",
+    "static/css/2.0cfad52a.chunk.css.map": "/iForget/static/css/2.0cfad52a.chunk.css.map",
+    "static/css/main.3f928c44.chunk.css.map": "/iForget/static/css/main.3f928c44.chunk.css.map",
+    "static/js/2.bba58470.chunk.js.LICENSE.txt": "/iForget/static/js/2.bba58470.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95feec00.js",
+    "static/css/2.0cfad52a.chunk.css",
+    "static/js/2.bba58470.chunk.js",
+    "static/css/main.3f928c44.chunk.css",
+    "static/js/main.6cc3991a.chunk.js"
+  ]
+}
