@@ -9,11 +9,9 @@ import "react-datepicker/dist/react-datepicker.css";
 function Main() {
   const [startDate, setStartDate] = useState(new Date());
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const initialFieldValues = {
-    reason: "",
-    date: "",
-  };
-  var [formValue, setFormValue] = useState(initialFieldValues);
+
+  const [reason, setReason] = useState();
+  const [date, setDate] = useState();
   const data = [
     // {
     //   id: 1,
@@ -56,15 +54,18 @@ function Main() {
   }
   function handleInputChange(e) {
     var { name, value } = e.target;
-    console.log(value);
-    setFormValue({ ...formValue, [name]: value });
+    setReason(value);
     // console.log(formValue.reason);
   }
   function handleDateChange(date) {
     var d = formatDate(date);
-    console.log(d);
-    // setFormValue({ date: d });
+    setDate(d);
     // console.log(formValue.date);
+  }
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    console.log(reason);
+    console.log(date);
   }
 
   return (
@@ -128,6 +129,7 @@ function Main() {
           autoComplete="off"
           className="font-semibold text-gray-500 rounded-md bg-white m-4 p-4 space-y-5"
           action=""
+          onSubmit={handleFormSubmit}
         >
           <p>reason?</p>
           <input
